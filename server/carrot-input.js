@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+const Base64 = require('js-base64').Base64;
 
 function Carrot(config){
     this.host = config.host;
@@ -14,7 +15,7 @@ function Carrot(config){
 
 Carrot.prototype.overview = function() {
   return new Promise((res, rej) => {
-    fetch(this.uri + '/overview')
+    fetch(this.uri + '/overview', options)
     .then(result=>result.json())
     .then(data=> { 
       const { message_stats, cluster_name, queue_totals, object_totals } = data

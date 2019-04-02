@@ -9,7 +9,7 @@ import * as d3 from 'd3';
 
 const NetworkGraph = (props) => {
   return  <svg width={props.width} height={props.height}>
-      <Titles {...props} />
+      {/* <Titles {...props} /> */}
       <Links {...props} />
       <Producers {...props} />
       <Exchanges {...props} />
